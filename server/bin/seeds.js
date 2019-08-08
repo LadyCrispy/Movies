@@ -8,23 +8,22 @@ mongoose.connect(`${process.env.DBLOCAL}`, { useNewUrlParser: true })
 
 const movies=[
   {
-    title: 'La vida de Brian',
-    description: 'Parodia',
-    poster: 'String',
-    video_url: 'String'
+    original_title: 'La vida de Brian',
+    overview: 'Parodia',
+    poster_path: 'String',
+    video: 'String'
   },
   {
-    title: 'La vida de Brian',
-    description: 'Parodia',
-    poster: 'String',
-    video_url: 'String'
+    original_title: 'La vida de Brian',
+    overview: 'Parodia',
+    poster_path: 'String',
+    video: 'String'
   },
   {
-    title: 'La vida de Brian',
-    description: 'Parodia',
-    poster: 'String',
-    video_url: 'String'
-
+    original_title: 'La vida de Brian',
+    overview: 'Parodia',
+    poster_path: 'String',
+    video: 'String'
   }
 ]
 

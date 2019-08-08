@@ -7,8 +7,9 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const multer       = require('multer')
 
-
+const upload = multer()
 
 
 const MongoStore = require('connect-mongo');
@@ -29,9 +30,10 @@ const app = express();
 
 // Middleware Setup
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({ extended: true , limit: '50mb', parameterLimit: 50000}));
 app.use(cookieParser());
+app.use(upload.array())
 
 
       //middleware cors
@@ -84,5 +86,6 @@ app.use('/', index);
 
 const movies = require('./routes/movies.routes')
 app.use('/api', movies)
+
 
 module.exports = app;
